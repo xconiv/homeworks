@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="sekiller/wikipedia1.png">
+    <title>Fərman Rəsulov</title>
+
+    <style>
+        .bolme {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20vh;
+            height: 100vh;
+            padding: 30px;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        .bolme:hover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20vh;
+            height: 100vh;
+            padding: 30px;
+            background-color: rgb(223, 223, 223);
+
+        }
+
+        .bolmeR {
+            position: fixed;
+            top: 0;
+            left: 85%;
+            width: 25vh;
+            height: 100vh;
+            padding: 30px;
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        .bolmeR:hover {
+            position: fixed;
+            top: 0;
+            left: 85%;
+            width: 25vh;
+            height: 100vh;
+            padding: 30px;
+            background-color: rgb(223, 223, 223);
+
+        }
+
+        .bolme p {
+            padding-top: 20vh;
+        }
+
+        .bolme a {
+            display: block;
+            padding-left: 20px;
+        }
+
+        .bolme a:hover {
+            color: black;
+        }
+
+        .esas {
+            padding: 10vh;
+            margin-left: 20vh;
+            margin-right: 20vh;
+            background-color: rgb(255, 255, 255);
+        }
+
+        header {
+
+            margin-left: 10vh;
+        }
+
+        header input[type="text"] {
+            width: 300px;
+            height: 30px;
+            padding: 5px 10px;
+        }
+
+        header input[type="text"]:hover {
+            width: 306px;
+            height: 33px;
+            padding: 5px 10px;
+        }
+
+        header button[type="submit"] {
+            width: 43px;
+            height: 43px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="bolmeR">
+        <a href="wikipedia_FR_Eng.html"><img src="sekiller/English_button_2.png" alt="" width="140px" height="30px"></a>
+    </nav>
+
+    <nav class="bolme">
+        <a href="https://az.wikipedia.org/wiki/Ana_s%C9%99hif%C9%99"><img src="sekiller/wikipedia2.svg" alt=""
+                width="100px" height="20px"></a>
+        <p></p>
+        <a href="#1">Haqqında</a>
+        <a href="#2">Təhsili</a>
+        <a href="#3">Bilikləri</a>
+        <a href="#4">Hobiləri</a>
+    </nav>
+
+    <main class="esas">
+        <header>
+            <form action="https://www.google.com/search" method="get" onsubmit="axtar()">
+                <input type="text" id="wiki" name="q" placeholder="axtar">
+                <button type="submit">🔍</button>
+                <!-- <button onclick="axtar()">🔍</button> -->
+            </form>
+
+        </header>
+
+
+        <h1>Fərman Rəsulov</h1>
+        <br>
+        <details id="1" open>
+            <summary><strong>Haqqında</strong></summary>
+            <p>
+                Fərman Rəsulov - Azərbaycanın ən tanınmış kibertəhlükəsizlik uzmanı və developerlərindəndir.O, 2006 cı
+                il Azərbaycan Bakı şəhərində anadan olmşdur.
+            </p>
+        </details>
+        <br>
+        <details id="2" open>
+            <summary><strong>Təhsili</strong></summary>
+            <p>
+                Orta təhsilini bitirdikdən sonra Bakı mühəndislik universitetinə qəbul olmuşdur.
+            </p>
+        </details>
+        <br>
+        <details id="3" open>
+            <summary><strong>Bilikləri</strong></summary>
+            <p>
+                C/C++ Python html/css
+            </p>
+        </details>
+        <br>
+        <details id="4" open>
+            <summary><strong>Hobiləri</strong></summary>
+            <ul>
+                <li>Oyun oynamaq</li>
+                <li>Fantastik/bilimkurgu filmlərə baxmaq</li>
+                <li>Və.s</li>
+            </ul>
+        </details>
+        <br>
+        <p>Əlaqə nömrəsi: +994 70 206 51 81 gmail: xconiv@gmail.com github: xconiv </p>
+
+    </main>
+
+    <script>
+        function axtar() {
+
+            const input = document.getElementById("wiki");
+            input.value = 'https://az.wikipedia.org/wiki/ ' + input.value;
+
+        }
+    </script>
+
+</body>
+
+</html>
