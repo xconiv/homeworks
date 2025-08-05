@@ -6,3 +6,51 @@
     list-style: none;
     font-family: "Playwrite HU", cursive;
 }
+
+.navv{
+    background-color: antiquewhite;
+    height: 60px;
+    padding:0 20px;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    background-image: none;
+    padding: 10px 20px;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navv .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navv a{
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    background-color:antiquewhite;
+    transition: transform 0.3s;
+}
+.navv a:hover{
+    background-color:bisque;
+    transform: scale(1.1); 
+}
+.navv a.logoimg img{
+    width: 100px;
+    height: 80%;
+    transition: transform 0.3s;
+    background-color: none !important;
+}
+.navv a.logoimg:hover img{
+    width: 100px;
+    height: 80%;
+    transform: scale(1.1); 
+    background-color: none !important;
+}
