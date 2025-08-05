@@ -2,11 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
+    text-decoration: none !important;
     list-style: none;
     font-family: "Playwrite HU", cursive;
 }
-
+main{
+    margin-top: 100px !important;
+    display: block;
+    
+}
+body{
+    background-color: rgb(220, 239, 239);
+    transition: transform 1s;
+}
 .navv{
     background-color: antiquewhite;
     height: 60px;
@@ -53,4 +61,34 @@
     height: 80%;
     transform: scale(1.1); 
     background-color: none !important;
+}
+
+
+
+.footerr{
+    background-color: #222;    
+    color: #fff;               
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footerr .foot-links{
+    margin-bottom: 15px;
+}
+
+.footerr a{
+    color: #ddd;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footerr a:hover{
+    color: #fff;
+}
+
+.footerr .copy{
+    font-size: 14px;
+    opacity: 0.8;
 }
