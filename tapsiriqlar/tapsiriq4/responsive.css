@@ -1,0 +1,11 @@
+@media (max-width:768px) {
+    .left__side{display: none;}
+    .right__side{width: 100%;}
+    
+}
+
+@media (max-width:500px){
+.right__side {
+    padding: 0px ;
+}
+}
