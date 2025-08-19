@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="snape.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SMART BUY</div>
+        
+        <div class="nnav"><a href="">login</a></div>
+        <div class="nnav"><a href="">register</a></div>
+        <div class="nnav"><a href="">meslehetliler</a></div>
+        <div class="nnav"><a href="">mehsullar</a></div>
+        <div class="nnav"><a href="">elaqe</a></div>
+        
+        <button class="burger" id="burger-btn" aria-label="menu">⋮</button>
+
+        <div class="cart-icon" id="cart-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart">
+            <span id="cart-count">0</span>
+        </div>
+        <div class="cart-dropdown" id="cart-dropdown">
+            <h4>Səbət</h4>
+            <ul id="cart-items"></ul>
+        </div>
+    </nav>
+
+   
+
+<div class="umumi">
+
+
+    <section class="slider" id="Xd">
+        <div class="slider-wrapper">
+            <div class="card">
+                <img src="tanki1.jpg" alt="Product 1">
+                <h3>Məhsul 1</h3>
+                <button class="add-to-cart">Səbətə əlavə et</button>
+            </div>
+            <div class="card">
+                <img src="tanki1.jpg" alt="Product 2">
+                <h3>Məhsul 2</h3>
+                <button class="add-to-cart">Səbətə əlavə et</button>
+            </div>
+            <div class="card">
+                <img src="tanki1.jpg" alt="Product 3">
+                <h3>Məhsul 3</h3>
+                <button class="add-to-cart">Səbətə əlavə et</button>
+            </div>
+            <div class="card">
+                <img src="tanki1.jpg" alt="Product 4">
+                <h3>Məhsul 4</h3>
+                <button class="add-to-cart">Səbətə əlavə et</button>
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+    </section>
+
+    <div style="text-align:center; margin-top:40px;">
+        <select id="filter">
+            <option value="hamisi">Hamısı</option>
+            <option value="telefon">Telefon</option>
+            <option value="komputer">Komputer</option>
+            <option value="aksesuar">Aksesuar</option>
+            <option value="airpods">Airpods</option>
+            <option value="powerpang">Powerpang</option>
+
+        </select>
+    </div>
+   
+    <div class="mehsullar" id="mehsulx">
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+        <div class="mehsullar-card" data-catagory="telefon">
+            <a href=""><img src="" alt=""></a>
+            <h3>telefon</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="komputer">
+            <a href=""><img src="" alt=""></a>
+            <h3>komputer</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="aksesuar">
+            <a href=""><img src="" alt=""></a>
+            <h3>aksesuar</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+        <div class="mehsullar-card" data-catagory="airpods">
+            <a href=""><img src="" alt=""></a>
+            <h3>airpods</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+         <div class="mehsullar-card" data-catagory="powerpang">
+            <a href=""><img src="" alt=""></a>
+            <h3>powerpang</h3>
+            <button class="add-to-cart">Səbətə əlavə et</button>
+        </div>
+
+       
+    </div>
+
+</div>
+
+    <div class="ayo" id="asaq">
+        <div class="ayyo"><a href=""><img src="" alt="">instagram</a></div>
+        <div class="ayyo"><a href=""><img src="" alt="">github</a></div>
+        <div class="ayyo"><p></p></div>
+        <div class="ayyo"><a href="">unvan</a></div>
+       
+    </div>
+
+
+
+    <script src="ron.js"></script>
+</body>
+</html>
