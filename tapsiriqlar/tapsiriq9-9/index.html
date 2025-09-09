@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog-Z</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">Catalog-Z</div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#" class="active">Photos</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://templatemo.com/templates/templatemo_556_catalog_z/img/hero.jpg" alt="Hero Image" id="heroImg">
+    </div>
+    <div class="search-box-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="main-content-wrapper">
+    <div class="top-photos-section">
+        <div class="section-header">
+            <h2 class="section-title">Latest Photos</h2>
+            <div class="top-pagination">
+                <span>Page</span>
+                <input type="number" id="topPageInput" value="1" min="1">
+                <span id="topTotalPages">of 1</span>
+            </div>
+        </div>
+        <div id="newPhotosContainer" class="photo-grid"></div>
+    </div>
+
+    <main>
+        <div id="photoGrid" class="photo-grid main-grid-bottom"></div>
+        <div class="pagination">
+            <button id="prev" class="pagination-btn"><i class="fas fa-angle-left"></i> Previous</button>
+            <div id="pageNumbers" class="page-numbers"></div>
+            <button id="next" class="pagination-btn">Next Page <i class="fas fa-angle-right"></i></button>
+        </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About Catalog-Z</h3>
+        <p>Catalog-Z is free HTML template by TemplateMo. This is Bootstrap 5 layout with React pagination and a gallery with Slick Carousel. You can download and adapt this template for your CMS sites.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Our Links</h3>
+        <ul>
+          <li><a href="#">Advertise</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Our Company</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social-section">
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>Designed by <a href="#" class="templatemo-link">TemplateMo</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2020 Catalog-Z. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
