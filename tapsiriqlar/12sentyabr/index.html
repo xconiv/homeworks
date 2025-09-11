@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Maşın Yarışı</title>
+<style>
+body { margin:0; overflow:hidden; }
+canvas { display:block; }
+#speed { position:absolute; top:10px; left:10px; color:white; font-size:20px; }
+#leaderboard {
+  position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.5);
+  color:white; padding:10px; font-family:Arial,sans-serif; font-size:16px; border-radius:5px;
+}
+#leaderboard strong { display:block; margin-bottom:5px; }
+</style>
+</head>
+<body>
+<div id="speed">Sürət: 0 km/h</div>
+<div id="leaderboard">
+  <strong>Yarış Sıralaması</strong>
+  <ol id="raceList"></ol>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
