@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Racing Game</title>
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/loaders/babylon.glTF2FileLoader.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+<style>
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+#renderCanvas { width: 100%; height: 100%; touch-action: none; }
+</style>
+</head>
+<body>
+<canvas id="renderCanvas"></canvas>
+<script>
+const canvas = document.getElementById("renderCanvas");
+const engine = new BABYLON.Engine(canvas, true);
+
+async function createScene() {
+    const scene = new BABYLON.Scene(engine);
+    scene.enablePhysics(new BABYLON.Vector3(0,-9.81,0), new BABYLON.CannonJSPlugin());
+
+    new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0,1,0), scene);
+    const directional = new BABYLON.DirectionalLight("dirLight", new BABYLON.Vector3(-1,-2,-1), scene);
+    directional.intensity = 0.5;
+
+    // Track yüklə
+    const trackResult = await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "track.glb", scene);
+    const trackMeshes = trackResult.meshes;
+
+    let minX=Infinity, minY=Infinity, minZ=Infinity;
+    let maxX=-Infinity, maxY=-Infinity, maxZ=-Infinity;
+
+    trackMeshes.forEach(mesh=>{
+        if(!mesh.getTotalVertices || mesh.getTotalVertices()===0) return;
+        const bb = mesh.getBoundingInfo().boundingBox;
+        minX = Math.min(minX, bb.minimumWorld.x);
+        minY = Math.min(minY, bb.minimumWorld.y);
+        minZ = Math.min(minZ, bb.minimumWorld.z);
+        maxX = Math.max(maxX, bb.maximumWorld.x);
+        maxY = Math.max(maxY, bb.maximumWorld.y);
+        maxZ = Math.max(maxZ, bb.maximumWorld.z);
+
+        mesh.checkCollisions = true;
+        mesh.physicsImpostor = new BABYLON.PhysicsImpostor(mesh, BABYLON.PhysicsImpostor.MeshImpostor, {mass:0, friction:0.9, restitution:0.1}, scene);
+    });
+
+    const centerX = (minX+maxX)/2;
+    const centerY = (minY+maxY)/2;
+    const centerZ = (minZ+maxZ)/2;
+
+    // Invisible ground
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: maxX-minX+50, height: maxZ-minZ+50}, scene);
+    ground.position = new BABYLON.Vector3(centerX, maxY+0.05, centerZ);
+    ground.isVisible = false;
+    ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpostor.BoxImpostor, {mass:0, friction:0.9}, scene);
+
+    // Car physics body
+    const carBody = BABYLON.MeshBuilder.CreateBox("carBody",{width:2,height:1,depth:4},scene);
+    carBody.isVisible=false;
+    carBody.position = new BABYLON.Vector3(centerX-165, maxY+2, centerZ-200);
+    carBody.physicsImpostor = new BABYLON.PhysicsImpostor(carBody, BABYLON.PhysicsImpostor.BoxImpostor, {mass:1200, friction:1, restitution:0}, scene);
+
+    const carResult = await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "car.glb", scene);
+    const carGLB = carResult.meshes[0];
+    carGLB.scaling = new BABYLON.Vector3(0.5,0.5,0.5);
+
+    // Camera
+    const camera = new BABYLON.FollowCamera("followCam", new BABYLON.Vector3(0,5,-10), scene);
+    camera.lockedTarget = carBody;
+    camera.radius = 10;
+    camera.heightOffset = 5;
+    camera.cameraAcceleration = 0.05;
+    camera.maxCameraSpeed = 5;
+
+    let targetSpeed=0, currentSpeed=0, steer=0;
+    const maxSpeed=0.2, turnSpeed=0.03, boostSpeed=0.4, brakeSpeed=-0.1;
+    let boost=false;
+
+    window.addEventListener("keydown", e=>{
+        switch(e.key){
+            case "ArrowUp": targetSpeed=maxSpeed; break;
+            case "ArrowDown": targetSpeed=brakeSpeed; break;
+            case "ArrowLeft": steer=-turnSpeed; break;
+            case "ArrowRight": steer=turnSpeed; break;
+            case "Shift": boost=true; break;
+        }
+    });
+
+    window.addEventListener("keyup", e=>{
+        switch(e.key){
+            case "ArrowUp": case "ArrowDown": targetSpeed=0; break;
+            case "ArrowLeft": case "ArrowRight": steer=0; break;
+            case "Shift": boost=false; break;
+        }
+    });
+
+    scene.onBeforeRenderObservable.add(()=>{
+        // Smooth speed
+        let desiredSpeed = boost ? boostSpeed : targetSpeed;
+        currentSpeed += (desiredSpeed - currentSpeed) * 0.1;
+
+        // Rotation-based steering
+        carBody.rotation.y += steer * Math.max(0.02, Math.abs(currentSpeed)*2);
+
+        // Forward velocity based on rotation
+        const forward = new BABYLON.Vector3(-Math.sin(carBody.rotation.y), 0, -Math.cos(carBody.rotation.y));
+        const velocity = forward.scale(currentSpeed * carBody.physicsImpostor.mass);
+        carBody.physicsImpostor.setLinearVelocity(velocity);
+
+        // GLB sync
+        carGLB.position.copyFrom(carBody.position);
+        carGLB.rotation.copyFrom(carBody.rotation);
+
+        // Camera follow
+        camera.rotationOffset = steer*20;
+    });
+
+    return scene;
+}
+
+createScene().then(scene=>{
+    engine.runRenderLoop(()=>scene.render());
+});
+window.addEventListener("resize", ()=>engine.resize());
+</script>
+</body>
+</html>
